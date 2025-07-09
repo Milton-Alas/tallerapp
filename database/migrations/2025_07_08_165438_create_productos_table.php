@@ -18,7 +18,7 @@ return new class extends Migration
             $table->enum('talla', ['8', '10', '12','14', '16', 'S', 'M', 'L', 'XL', 'XXL']);
             $table->decimal('precio_docena', 10, 2);
             $table->text('comentario')->nullable();
-            $table->unique('color', 'talla'); //para evitar duplicados
+            $table->unique(['color', 'talla']); //para evitar duplicados
             $table->timestamps();
         });
     }
